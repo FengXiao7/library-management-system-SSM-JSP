@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.dao.BookDao">
+    <!--//增加一个Books-->
+    <insert id="addBook" parameterType="Books">
+        insert into books (bookID,bookName,bookCounts,detail,bookType,Press,bookAuthor,bookDate,bookPage) values
+        (#{bookID},#{bookName},#{bookCounts},#{detail},#{bookType},#{Press},#{bookAuthor},#{bookDate},#{bookPage})
+    </insert>
+    <!--//根据id删除Books-->
+    <delete id="deleteBookByID" parameterType="int">
+        delete from books where bookID = #{id}
+    </delete>
+
+    <!--//更新Books-->
+    <update id="updateBook" parameterType="Books">
+        update books
+        set bookName = #{bookName},bookCounts=#{bookCounts},detail = #{detail},bookType=#{bookType},
+            Press=#{Press},bookAuthor=#{bookAuthor},bookDate=#{bookDate},bookPage=#{bookPage}
+        where bookID = #{bookID}
+    </update>
+
+    <!--//根据id查询Book-->
+    <select id="queryBookByID" resultType="Books">
+        select * from books
+        where bookID = #{id}
+    </select>
+
+    <!--//查看全部的Book-->
+    <select id="queryAllBook" resultType="Books">
+        select * from books
+    </select>
+<!--    根据书名来查找书籍-->
+    <select id="queryBookByName" resultType="Books">
+        select * from books where bookName=#{bookName}
+    </select>
+    <!--    根据书类型来查找书籍-->
+    <select id="queryBookByType" resultType="Books">
+        select * from books where bookType=#{bookType}
+    </select>
+
+</mapper>

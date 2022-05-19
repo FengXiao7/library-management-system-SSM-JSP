@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<!--要与接口相对应！比如此时就对应了UserMapper接口-->
+<mapper namespace="com.library.dao.CommentsDao">
+        <insert id="addComments" parameterType="Comments">
+                insert into comments (userID,bookID,bookComments,CommentDate)
+                VALUES (#{userID},#{bookID},#{bookComments},#{CommentDate})
+        </insert>
+        <update id="updateComments" parameterType="Comments">
+                update comments
+                set bookComments=#{bookComments},CommentDate=#{CommentDate}
+                where userID = #{userID} and bookID =#{bookID}
+        </update>
+        <delete id="deleteComments">
+                delete from Comments where bookID=#{ID1} and userID=#{ID2}
+        </delete>
+        <delete id="deleteCommentsByBookID">
+                delete from Comments where bookID=#{ID1}
+        </delete>
+        <delete id="deleteCommentsByUserID">
+                delete from Comments where userID=#{ID2}
+        </delete>
+        <select id="getAllComments" resultType="Comments">
+                select *from comments
+        </select>
+        <select id="getAllCommentsByBookID" resultType="Comments" parameterType="integer">
+                select *from comments where bookID=#{ID1};
+        </select>
+        <select id="getAllCommentsByUserID" resultType="Comments" parameterType="integer">
+                select *from comments where userID=#{ID2};
+        </select>
+</mapper>

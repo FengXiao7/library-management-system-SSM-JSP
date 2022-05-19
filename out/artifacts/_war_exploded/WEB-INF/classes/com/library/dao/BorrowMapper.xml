@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<!--要与接口相对应！比如此时就对应了UserMapper接口-->
+<mapper namespace="com.library.dao.BorrowDao">
+        <insert id="addBorrow" parameterType="Borrow">
+                insert into borrow (bookID, userID, time)
+                VALUES (#{bookID},#{userID},#{time})
+        </insert>
+
+        <delete id="deleteBorrow">
+                delete from borrow where bookID=#{ID1} and userID=#{ID2}
+        </delete>
+        <delete id="deleteBorrowByBookID">
+                delete from borrow where bookID=#{ID1}
+        </delete>
+        <delete id="deleteBorrowByUserID">
+                delete from borrow where userID=#{ID2}
+        </delete>
+        <select id="getAllBorrow" resultType="Borrow">
+                select *from borrow
+        </select>
+
+        <select id="getAllBorrowByBookID" resultType="Borrow" parameterType="integer">
+                select *from borrow where bookID=#{ID1}
+        </select>
+
+        <select id="getAllBorrowByUserID" resultType="Borrow" parameterType="integer">
+                select *from borrow where userID=#{ID2}
+        </select>
+</mapper>

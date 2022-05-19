@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<!--要与接口相对应！比如此时就对应了UserMapper接口-->
+<mapper namespace="com.library.dao.UserDao">
+        <insert id="addUser">
+                insert into user (userID, userName,userPassword) values (#{userID},#{userName},#{userPassword})
+        </insert>
+        <update id="updateUser" parameterType="user">
+                update user set userName=#{userName},userPassword=#{userPassword},
+                                userPhone=#{userPhone},userSex=#{userSex},userAge=#{userAge}
+                where userID=#{userID}
+        </update>
+        <delete id="deleteUser" parameterType="integer">
+                delete from user where userID=#{userID}
+        </delete>
+        <select id="getAllUser" resultType="User">
+                select *from user
+        </select>
+        <select id="getOneUser" resultType="User" parameterType="integer">
+        select *from user where userID=#{userID}
+        </select>
+        <select id="getUserByUserName" resultType="User" >
+            select *from user where userName=#{userName};
+        </select>
+
+</mapper>

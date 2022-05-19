@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描包-->
+    <context:component-scan base-package="com.library.service"/>
+
+    <!--手动配置bean-->
+<!--    <bean id="bookServiceImpl" class="com.fcx.service.BookServiceImpl">-->
+<!--        <property name="bookDao" ref="bookDao"/>-->
+<!--    </bean>-->
+
+    <!--事务管理-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--DataSource-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>

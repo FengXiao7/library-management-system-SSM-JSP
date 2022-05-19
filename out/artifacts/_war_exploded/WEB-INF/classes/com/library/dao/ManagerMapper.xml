@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<!--要与接口相对应！比如此时就对应了UserMapper接口-->
+<mapper namespace="com.library.dao.ManagerDao">
+
+
+    <insert id="addManager">
+        insert into manager (managerID, Name,password) values (#{managerID},#{Name},#{password})
+    </insert>
+    <update id="updateManager" parameterType="Manager">
+        update manager set Name=#{Name},password=#{password} where managerID=#{managerID}
+    </update>
+    <delete id="deleteManager" parameterType="integer">
+        delete from manager where managerID=#{managerID}
+    </delete>
+    <select id="getAllManager" resultType="Manager">
+        select *from manager
+    </select>
+    <select id="getManager" resultType="Manager" parameterType="integer">
+        select Name,password from manager where managerID=#{managerID}
+    </select>
+</mapper>

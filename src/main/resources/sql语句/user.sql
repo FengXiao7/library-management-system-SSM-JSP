@@ -1,0 +1,16 @@
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (1, '张三', '123', '18284557828', '男', 124);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (2, '李四', '1234', '12345678901', '男', 123);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (3, '王五', '12345', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (4, '赵六', '123456', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (5, '钱七', '1234567', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (6, '小冯', '123', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (7, '444', '444', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (9, '老八', '888', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (10, '李10', '101010', '15284557826', '男', 23);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (11, '王11', '111', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (12, '张12', '1212', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (13, '刘13', '1313', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (14, '赵14', '1414', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (15, '王15', '12345', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (16, '李16', '123456', null, null, null);
+INSERT INTO user (userID, userName, userPassword, userPhone, userSex, userAge) VALUES (18, '1', '1', null, null, null);
